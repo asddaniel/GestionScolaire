@@ -14,24 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
 App\Http\Controllers\EleveController::route();
 App\Http\Controllers\FraisController::route();
 App\Http\Controllers\OptionController::route();
 App\Http\Controllers\PromotionController::route();
 App\Http\Controllers\SectionController::route();
 App\Http\Controllers\PaiementController::route();
+});
+
+require __DIR__.'/auth.php';
+

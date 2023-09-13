@@ -1,8 +1,14 @@
 <div class="h-screen p-3 z-10 space-y-2  dark:bg-gray-900 dark:text-gray-100 lg:sticky lg:block hidden top-0 sidebar transition transition-all -translate-x-full lg:translate-x-0">
     <div class="flex items-center p-2 space-x-4">
-        <img src="https://source.unsplash.com/100x100/?portrait" alt="" class="w-12 h-12 rounded-full dark:bg-gray-500" />
+        <div class="rounded-full border-2 p-2 border-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+              </svg>
+
+        </div>
+        
         <div>
-            <h2 class="text-lg font-semibold">Leroy Jenkins</h2>
+            <h2 class="text-lg font-semibold">{{ Auth::user()->name }}</h2>
             <span class="flex items-center space-x-1">
                 <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400">View profile</a>
             </span>
@@ -82,7 +88,7 @@
                 </a>
             </li>
             <li>
-                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                <a rel="noopener noreferrer" href="{{ route('logout.get') }}" class="flex items-center p-2 space-x-3 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-400">
                         <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
                         <rect width="32" height="64" x="256" y="232"></rect>
