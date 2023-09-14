@@ -53,7 +53,7 @@
                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $cle }}</td>
 
                     <td class="whitespace-nowrap px-6 py-4">{{ $eleve->name }}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{ $eleve->promotion->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $eleve->promotion->name??'' }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $eleve->promotion->section->name??'' }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $eleve->promotion->option->name??'' }}</td>
                     <td class="flex gap-2 align-center py-4">

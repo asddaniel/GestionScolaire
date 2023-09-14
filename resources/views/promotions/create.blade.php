@@ -58,8 +58,8 @@
                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $cle }}</td>
 
                     <td class="whitespace-nowrap px-6 py-4">{{ $promotion->name }}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{ $promotion->section->name }}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{ $promotion->option->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $promotion->section->name??'' }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $promotion->option->name??'' }}</td>
                     <td class="flex gap-2 align-center py-4">
                       <a href="{{ route('promotions.show',$promotion->id) }}" class="px-4 py-2 text-white font-bold bg-slate-600 rounded-md">Modifier</a>
                       <form action="{{ route('promotions.destroy',$promotion->id) }}" method="POST">

@@ -95,7 +95,7 @@
                     class="border-b bg-neutral-100 border-neutral-200 hover:bg-neutral-300 paiement-row" frais_id="{{ $paiement->frais->id }}" promotion_id="{{ $paiement->eleve->promotion->id }}" >
                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $cle }}</td>
 
-                    <td class="whitespace-nowrap px-6 py-4">{{ $paiement->eleve->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $paiement->eleve->name??'' }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $paiement->frais->montant??'' }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $paiement->frais->name??'' }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $paiement->created_at }}</td>

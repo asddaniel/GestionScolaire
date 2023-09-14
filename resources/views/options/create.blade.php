@@ -49,7 +49,7 @@
                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $cle }}</td>
 
                     <td class="whitespace-nowrap px-6 py-4">{{ $option->name }}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{ $option->section->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $option->section->name??'' }}</td>
                     <td class="flex gap-2 align-center py-4">
                       <a href="{{ route('options.show',$option->id) }}" class="px-4 py-2 text-white font-bold bg-slate-600 rounded-md">Modifier</a>
                       <form action="{{ route('options.destroy',$option->id) }}" method="POST">
